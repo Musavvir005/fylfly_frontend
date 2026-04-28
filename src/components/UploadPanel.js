@@ -70,10 +70,7 @@ function UploadPanel() {
     formData.append('email', recipient.trim());
     if (message.trim()) formData.append('message', message.trim());
 
-    try {const response = await axios.post(
-  'https://fylfly-backend.onrender.com/upload',
-  formData
-);
+    try {const response = await axios.post('https://fylfly-bend.onrender.com/api/upload', formData);
       // Show toast first, then reset only the form fields
       setExpiryTime(response.data.expiryTime);
       setShowToast(true);
