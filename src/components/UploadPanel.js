@@ -71,7 +71,7 @@ function UploadPanel() {
     if (message.trim()) formData.append('message', message.trim());
 
     try {
-      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/retrieve`, formData);
+      const response = await axios.post('https://fylfly-backend.onrender.com', formData);
 
       // Show toast first, then reset only the form fields
       setExpiryTime(response.data.expiryTime);
